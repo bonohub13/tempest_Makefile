@@ -1,3 +1,4 @@
+
 clean:
 	$(shell ([ -f "tempest" ] && rm tempest) || true)
 	$(shell ([ -d "/usr/lib/xscreensaver" ] && /usr/bin/xscreensaver/tempest) || true)
@@ -7,12 +8,12 @@ build:
 	gcc -o tempest tempest.c -lGL -lX11 -lm
 
 install: build
-	mkdir -p /usr/lib/xscreensaver
-	cp tempest /usr/lib/xscreensaver
+	sudo /bin/mkdir -p /usr/lib/xscreensaver
+	sudo /bin/cp tempest /usr/lib/xscreensaver
 
 install-KDE: build install
-	mkdir -p /usr/share/applnk/System/ScreenSavers
-	cp tempest.desktop /usr/share/applnk/System/ScreenSavers
+	sudo /bin/mkdir -p /usr/share/applnk/System/ScreenSavers
+	sudo /bin/cp tempest.desktop /usr/share/applnk/System/ScreenSavers
 
 install-xscreensaver: build install
-	$(shell echo 'tempest -root \n\' | tee -a "$HOME/.xscreensaver" > /dev/null)
+	$(shell ./install_xscreensaver.sh)
