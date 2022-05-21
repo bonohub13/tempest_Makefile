@@ -9,9 +9,7 @@ tar xzvf 53056-tempest.tar.gz
 3. To install, run the make command as the following
     - For KDE users
     ``` bash
-    sudo make install-KDE
+    make install-KDE
     ```
     - For xscreensaver
-    ``` bash
-    sudo make install-xscreensaver
-    ```
+        - Add `  GL: tempest -root \n\` to ~/.xscreensaver
