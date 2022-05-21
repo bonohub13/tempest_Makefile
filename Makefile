@@ -14,6 +14,3 @@ install: build
 install-KDE: build install
 	sudo /bin/mkdir -p /usr/share/applnk/System/ScreenSavers
 	sudo /bin/cp tempest.desktop /usr/share/applnk/System/ScreenSavers
-
-install-xscreensaver: build install
-	$(shell ./install_xscreensaver.sh)
