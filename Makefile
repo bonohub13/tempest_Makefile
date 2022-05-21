@@ -15,4 +15,4 @@ install-KDE: build install
 	cp tempest.desktop /usr/share/applnk/System/ScreenSavers
 
 install-xscreensaver: build install
-	$(shell echo 'tempest -root' | tee ~/.xscreensaver > /dev/null)
+	$(shell echo 'tempest -root \n\' | tee -a "$HOME/.xscreensaver" > /dev/null)
