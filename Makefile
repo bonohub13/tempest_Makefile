@@ -4,7 +4,7 @@ clean:
 	$(shell ([ -d "/usr/share/applnk/System/ScreenSavers" ] && /usr/share/applnk/System/ScreenSavers/tempest.desktop) || true)
 
 build:
-	gcc -o tempest tempest.c -lGL -X11 -lm
+	gcc -o tempest tempest.c -lGL -lX11 -lm
 
 install: build
 	mkdir -p /usr/lib/xscreensaver
